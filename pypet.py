@@ -1,11 +1,12 @@
-print 'Welcome to Pypet!'
+print ('Welcome to Pypet!')
 
-cat = {
-  'name': 'Fluffy',
+fish = {
+  'name': 'Sir Patrick',
+  'age': 112,
+  'weight': 5.3,
   'hungry': True,
-  'weight': 9.5,
-  'age': 5,
-  'photo': '(=^o.o^=)_',
+  'bored': True,
+  'photo': '<`)))><'
 }
 
 mouse = {
@@ -13,26 +14,28 @@ mouse = {
     'age': 6,
     'weight': 1.5,
     'hungry': False,
+    'bored': True,
     'photo': '<:3 )~~~~',
 }
 
-pets = [cat, mouse]
-
+print ('Hello '+fish['name'])
+print (fish['photo'])
 
 def feed(pet):
   if pet['hungry'] == True:
     pet['hungry'] = False
-    pet['weight'] = pet['weight'] + 1
-    print 'omnomom!!'
-  else:
-    print 'The Pypet is not hungry!'
+    pet['weight'] = pet['weight'] +1
+  else: print('The Pypet is not hungry!')
 
-for pet in pets:
-    print '------------------------------'
-    print 'Hello ' + pet['name'] + '!'
-    print pet['photo']
-    print 'Weight: ' + str(pet['weight'])
-    feed(pet)
-    print 'Weight: ' + str(pet['weight'])
-    print '------------------------------'
+def play(pet):
+  if pet['bored'] == True:
+    pet['bored'] = False
+    pet['weight'] = pet['weight'] -.5
+  else: print('The Pypet is tired! ' + pet['photo'])
 
+pets =[fish, mouse]
+
+play(fish)
+play(fish)
+play(mouse)
+play(mouse)
